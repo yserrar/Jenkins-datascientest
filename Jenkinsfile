@@ -55,7 +55,7 @@ pipeline {
 
         stage('Déploiement en dev') {
             environment {
-                KUBECONFIG = credentials("configib")  // kubeconfig Jenkins
+                KUBECONFIG = credentials("configid")  // kubeconfig Jenkins
             }
             steps {
                 script {
@@ -73,7 +73,7 @@ pipeline {
 
         stage('Déploiement en staging') {
             environment {
-                KUBECONFIG = credentials("configib")
+                KUBECONFIG = credentials("configid")
             }
             steps {
                 script {
@@ -91,7 +91,7 @@ pipeline {
 
         stage('Déploiement en prod') {
             environment {
-                KUBECONFIG = credentials("configib")
+                KUBECONFIG = credentials("configid")
             }
             steps {
                 timeout(time: 15, unit: "MINUTES") {
